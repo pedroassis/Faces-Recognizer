@@ -15,6 +15,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
+import model.CaptionUtils;
 
 /**
  *
@@ -92,14 +93,14 @@ public class ListagemFuncionario extends javax.swing.JDialog {
             }
         });
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Funcionarios Cadastrados", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, CAPTIONS.getString("WORKERSLIST"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14))); // NOI18N
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Matrícula", "Nome", "CPF", "Telefone", "PIS", "Identidade"
+                "", "", "", "", "", ""
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -116,6 +117,12 @@ public class ListagemFuncionario extends javax.swing.JDialog {
             }
         });
         jScrollPane1.setViewportView(jTable1);
+        jTable1.getColumnModel().getColumn(0).setHeaderValue(CAPTIONS.getString("IDNUMBER"));
+        jTable1.getColumnModel().getColumn(1).setHeaderValue(CAPTIONS.getString("NAME"));
+        jTable1.getColumnModel().getColumn(2).setHeaderValue(CAPTIONS.getString("DOCNUMBER"));
+        jTable1.getColumnModel().getColumn(3).setHeaderValue(CAPTIONS.getString("PHONE"));
+        jTable1.getColumnModel().getColumn(4).setHeaderValue(CAPTIONS.getString("SSNUMBER"));
+        jTable1.getColumnModel().getColumn(5).setHeaderValue(CAPTIONS.getString("ID_DOC"));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -232,6 +239,7 @@ public class ListagemFuncionario extends javax.swing.JDialog {
     private javax.swing.JPopupMenu menuFuncionario;
     private javax.swing.JMenuItem verRegistros;
     // End of variables declaration//GEN-END:variables
+    private static CaptionUtils CAPTIONS;
 
     private void alterarFuncionario() {
         Funcionario f = getFuncionario();

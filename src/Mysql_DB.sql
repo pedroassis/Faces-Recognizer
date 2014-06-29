@@ -1,0 +1,30 @@
+CREATE DATABASE IF NOT EXISTS ConPes;
+
+use conpes;
+
+CREATE TABLE foto (
+  id INT NOT NULL AUTO_INCREMENT,
+  caminho VARCHAR(255) NULL,
+  funcionario INT NULL,
+  date DATE NULL,
+  PRIMARY KEY(id)
+);
+
+CREATE TABLE funcionario (
+  id INT NOT NULL AUTO_INCREMENT,
+  nome VARCHAR(255) NULL,
+  cpf VARCHAR(18) NULL,
+  pis VARCHAR(18) NULL,
+  telefone VARCHAR(15) NULL,
+  identidade VARCHAR(18) NULL,
+  PRIMARY KEY(id)
+);
+
+CREATE TABLE registro (
+  id INT NOT NULL AUTO_INCREMENT,
+  funcionario INT NULL,
+  tipo INT NULL,
+  date DATETIME NULL,
+  PRIMARY KEY(id)
+);
+

@@ -1,0 +1,27 @@
+connect 'jdbc:derby:conpes;create=true';
+
+CREATE TABLE foto (
+  id INT ,
+  caminho VARCHAR(255) ,
+  funcionario INT ,
+  date DATE ,
+  PRIMARY KEY(id)
+);
+
+CREATE TABLE funcionario (
+  id INT ,
+  nome VARCHAR(255) ,
+  cpf VARCHAR(18) ,
+  pis VARCHAR(18) ,
+  telefone VARCHAR(15) ,
+  identidade VARCHAR(18) ,
+  PRIMARY KEY(id)
+);
+
+CREATE TABLE registro (
+  id INT  ,
+  funcionario INT ,
+  tipo INT ,
+  date DATE ,
+  PRIMARY KEY(id)
+);

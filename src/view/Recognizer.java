@@ -28,12 +28,14 @@ import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.InputStream;
 import java.util.Date;
+import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
+import model.CaptionUtils;
 
 /**
  *
@@ -99,7 +101,7 @@ public class Recognizer extends JFrame {
         jToolBar1.setFloatable(false);
         jToolBar1.setRollover(true);
 
-        outputContainer.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ConPes - Ponto Eletrônico", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14))); // NOI18N
+        outputContainer.setBorder(javax.swing.BorderFactory.createTitledBorder(null, CAPTIONS.getString("TITLE"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14))); // NOI18N
         outputContainer.setPreferredSize(new java.awt.Dimension(352, 319));
         outputContainer.setRequestFocusEnabled(false);
 
@@ -110,11 +112,11 @@ public class Recognizer extends JFrame {
         outputPanel.setLayout(outputPanelLayout);
         outputPanelLayout.setHorizontalGroup(
             outputPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 685, Short.MAX_VALUE)
+            .addGap(0, 693, Short.MAX_VALUE)
         );
         outputPanelLayout.setVerticalGroup(
             outputPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 422, Short.MAX_VALUE)
+            .addGap(0, 434, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout outputContainerLayout = new javax.swing.GroupLayout(outputContainer);
@@ -130,15 +132,15 @@ public class Recognizer extends JFrame {
             outputContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, outputContainerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(outputPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE)
+                .addComponent(outputPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jMenu1.setText("Arquivo");
+        jMenu1.setText(CAPTIONS.getString("CODE"));
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ENTER, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem1.setIcon(IconUtils.getIcon("off"));
-        jMenuItem1.setText("Sair");
+        jMenuItem1.setText(CAPTIONS.getString("EXIT"));
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -148,11 +150,11 @@ public class Recognizer extends JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Funcionarios");
+        jMenu2.setText(CAPTIONS.getString("WORKERS"));
 
         jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem2.setIcon(IconUtils.getIcon("cadastro"));
-        jMenuItem2.setText("Cadastro");
+        jMenuItem2.setText(CAPTIONS.getString("SIGNUP"));
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem2ActionPerformed(evt);
@@ -162,7 +164,7 @@ public class Recognizer extends JFrame {
 
         jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem3.setIcon(IconUtils.getIcon("funcionarios"));
-        jMenuItem3.setText("Listagem");
+        jMenuItem3.setText(CAPTIONS.getString("LIST"));
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem3ActionPerformed(evt);
@@ -172,11 +174,11 @@ public class Recognizer extends JFrame {
 
         jMenuBar1.add(jMenu2);
 
-        jMenu3.setText("Registro");
+        jMenu3.setText(CAPTIONS.getString("CHECKIN"));
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem4.setIcon(IconUtils.getIcon("registros"));
-        jMenuItem4.setText("Listagem");
+        jMenuItem4.setText(CAPTIONS.getString("CHECKINLIST"));
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem4ActionPerformed(evt);
@@ -362,6 +364,7 @@ public class Recognizer extends JFrame {
             
         }
     };
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -375,4 +378,5 @@ public class Recognizer extends JFrame {
     private javax.swing.JPanel outputContainer;
     private javax.swing.JPanel outputPanel;
     // End of variables declaration//GEN-END:variables
+    private static CaptionUtils CAPTIONS;
 }

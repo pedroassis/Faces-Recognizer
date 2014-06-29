@@ -10,6 +10,7 @@ import java.awt.HeadlessException;
 import java.awt.Toolkit;
 import java.awt.Window;
 import javax.swing.JOptionPane;
+import model.CaptionUtils;
 
 /**
  *
@@ -62,21 +63,21 @@ public class EditaFuncionario extends javax.swing.JDialog {
 
         setIconImages(IconUtils.getIcons());
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Edição de Funcionario"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(CAPTIONS.getString("WORKER_EDIT")));
 
         jtNome.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         jlNome.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jlNome.setText("Nome");
+        jlNome.setText(CAPTIONS.getString("NAME"));
 
         jlRg2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jlRg2.setText("Matrícula");
+        jlRg2.setText(CAPTIONS.getString("ID"));
 
         jtMatricula.setEditable(false);
         jtMatricula.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         jbCancelar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jbCancelar.setText("Cancelar");
+        jbCancelar.setText(CAPTIONS.getString("CANCEL"));
         jbCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbCancelarActionPerformed(evt);
@@ -84,7 +85,7 @@ public class EditaFuncionario extends javax.swing.JDialog {
         });
 
         jbCadastrar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jbCadastrar.setText("Cadastar");
+        jbCadastrar.setText(CAPTIONS.getString("SINGUP"));
         jbCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbCadastrarActionPerformed(evt);
@@ -92,7 +93,7 @@ public class EditaFuncionario extends javax.swing.JDialog {
         });
 
         jbExcluir.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jbExcluir.setText("Excluir");
+        jbExcluir.setText(CAPTIONS.getString("DELETE"));
         jbExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbExcluirActionPerformed(evt);
@@ -121,7 +122,7 @@ public class EditaFuncionario extends javax.swing.JDialog {
         jtRg.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         jlRg1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jlRg1.setText("Telefone:");
+        jlRg1.setText(CAPTIONS.getString("PHONE"));
 
         try {
             jtTel.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #### - ####")));
@@ -131,28 +132,27 @@ public class EditaFuncionario extends javax.swing.JDialog {
         jtTel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         jlCpf.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jlCpf.setText("CPF");
+        jlCpf.setText(CAPTIONS.getString("DOCNUMBER"));
 
         jlRg.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jlRg.setText("RG");
+        jlRg.setText(CAPTIONS.getString("ID_DOC"));
 
         jlCpf1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jlCpf1.setText("PIS:");
+        jlCpf1.setText(CAPTIONS.getString("SS_NUMBER"));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
                         .addComponent(jlRg2)
                         .addGap(18, 18, 18)
                         .addComponent(jtMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jlNome)
                             .addComponent(jlCpf)
@@ -160,7 +160,7 @@ public class EditaFuncionario extends javax.swing.JDialog {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 225, Short.MAX_VALUE)
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jbCadastrar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jbExcluir)
@@ -318,4 +318,6 @@ public class EditaFuncionario extends javax.swing.JDialog {
     private javax.swing.JFormattedTextField jtRg;
     private javax.swing.JFormattedTextField jtTel;
     // End of variables declaration//GEN-END:variables
+    private static CaptionUtils CAPTIONS;
+
 }

@@ -15,6 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
+import model.CaptionUtils;
 
 /**
  *
@@ -55,14 +56,14 @@ public class ListagemRegistros extends javax.swing.JDialog{
             }
         });
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Listagem de Registros", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, CAPTIONS.getString("CHECKINLIST"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 14))); // NOI18N
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Funcionario", "Tipo", "Data"
+                "", "", "", ""
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -79,9 +80,13 @@ public class ListagemRegistros extends javax.swing.JDialog{
             }
         });
         jScrollPane1.setViewportView(jTable1);
+        jTable1.getColumnModel().getColumn(0).setHeaderValue(CAPTIONS.getString("ID"));
+        jTable1.getColumnModel().getColumn(1).setHeaderValue(CAPTIONS.getString("WORKER"));
+        jTable1.getColumnModel().getColumn(2).setHeaderValue(CAPTIONS.getString("TYPE"));
+        jTable1.getColumnModel().getColumn(3).setHeaderValue(CAPTIONS.getString("DATE"));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("Todos os Registros");
+        jLabel1.setText(CAPTIONS.getString("ALLCHECKINS"));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -216,5 +221,6 @@ public class ListagemRegistros extends javax.swing.JDialog{
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+    private static CaptionUtils CAPTIONS;
 
 }

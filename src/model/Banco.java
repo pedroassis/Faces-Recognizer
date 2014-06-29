@@ -33,7 +33,7 @@ public class Banco {
 
     public Banco() {
         /*  Carregando o arquivo Banco.properties */
-        ResourceBundle dadosDoBanco = ResourceBundle.getBundle("Banco");
+        ResourceBundle dadosDoBanco = ResourceBundle.getBundle("Database");
         try {
             Class.forName(dadosDoBanco.getString("driver"));
             

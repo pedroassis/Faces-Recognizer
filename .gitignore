@@ -1,0 +1,12 @@
+
+
+
+hs_err*.log
+FACE_RECOGNIZER.yml
+derby.log
+build.xml
+dist/
+fotos/*.*
+build/
+nbproject/
+manifest.mf

@@ -1,4 +1,4 @@
-Face's Recognizer	{#welcome}
+Face's Recognizer
 =====================
 
 This is a Java based **Face Recognizing Software**, it uses `JavaCV` and, of course, `OpenCV` version `2.4.5`.
